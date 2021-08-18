@@ -1,0 +1,36 @@
+repos:
+
+# black
+- repo: https://github.com/ambv/black
+  rev: stable
+  hooks:
+  - id: black
+
+# flake8
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v2.3.0
+  hooks:
+  - id: check-merge-conflict
+  - id: debug-statements
+  - id: flake8
+  - id: check-yaml
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+
+# pylint
+- repo: https://github.com/pre-commit/mirrors-pylint
+  rev: v2.3.1
+  hooks:
+  - id: pylint
+    args:
+      - --rcfile=.pylintrc
+
+# # pytest
+# - repo: local
+#   hooks:
+#   - id: pytest
+#     name: pytest
+#     entry: venv/bin/pytest
+#     language: script
+#     types: [python]
+#     always_run: true
